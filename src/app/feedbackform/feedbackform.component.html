@@ -1,13 +1,20 @@
 <div class="row ">
   <div class="col-sm-8">
-    <form>
+    <form (ngSubmit)="onSubmit(feed)" #feed="ngForm">
       <div class="form-group">
         <label for="fName">First Name:</label>
-        <input ngModel type="text" class="form-control" id="fName" placeholder="First Name" name="fName">
+        <input ngModel type="text" class="form-control" id="fName" 
+         name="fName" 
+        
+        
+        >
       </div>
       <div class="form-group">
         <label for="feedback">Feedback:</label>
-        <textarea name="feedback" id="feedback" cols="30" rows="10" placeholder="Feedback" class="form-control"></textarea>
+        <textarea ngModel
+        name="feedback" id="feedback" cols="30" rows="10" class="form-control"
+        
+        ></textarea>
   </div>
   <div class="form-group">
       <button type="submit" class="btn btn-lg btn-primary">Submit</button>
