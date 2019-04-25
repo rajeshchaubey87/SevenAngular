@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { from } from 'rxjs';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeedbackformComponent
+    FeedbackformComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
