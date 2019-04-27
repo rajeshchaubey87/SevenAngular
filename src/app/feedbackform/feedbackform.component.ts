@@ -8,11 +8,13 @@ import { NgForm } from '@angular/forms';
 })
 export class FeedbackformComponent {
 
+  logR(field){
+      console.log("Not touched in forms");
+  }
 
   onSubmit(form:NgForm){
     console.log(form);
-    alert(form.control.value.fName);
-    alert(form.control.value.feedback);
+   
   }
 
   

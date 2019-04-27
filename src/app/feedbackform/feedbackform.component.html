@@ -1,26 +1,35 @@
 <div class="row ">
   <div class="col-sm-8">
     <form (ngSubmit)="onSubmit(feed)" #feed="ngForm">
+      <!--firstName is start -->
       <div class="form-group">
         <label for="fName">First Name:</label>
-        <input ngModel type="text" class="form-control" id="fName" 
-         name="fName" 
-        
-        
-        >
+        <input (blur)="logR(fName)" required ngModel type="text" class="form-control" id="fName" name="fName"
+          #fName="ngModel">
+        <span *ngIf="fName.touched && !fName.valid" class="text-danger">First Name field can not be blanked</span>
       </div>
+      <!--firstName is end -->
+
+      <!--email is start -->
+      <div class="form-group">
+        <label for="eMail">Email:</label>
+        <input pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" (blur)="logR(eMail)" required ngModel type="text" class="form-control" id="eMail" name="eMail"
+          #eMail="ngModel">
+        <span *ngIf="eMail.touched && !eMail.valid" class="text-danger">Email field can not be blanked</span>
+      </div>
+      <!--email is end -->
+
+      <!-- feedback is start -->
       <div class="form-group">
         <label for="feedback">Feedback:</label>
-        <textarea ngModel
-        name="feedback" id="feedback" cols="30" rows="10" class="form-control"
-        
-        ></textarea>
-  </div>
-  <div class="form-group">
-      <button type="submit" class="btn btn-lg btn-primary">Submit</button>
-  </div>
- 
-</form>
+        <textarea required (blur)="logR(feedback)" ngModel name="feedback" id="feedback" cols="30" rows="5" class="form-control" #feedback="ngModel"></textarea>
+        <span *ngIf="feedback.touched && !feedback.valid" class="text-danger">Feedback field can not be blanked</span>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+      </div>
+    <!-- feedback is end -->
+    </form>
 
-</div>
+  </div>
 </div>
